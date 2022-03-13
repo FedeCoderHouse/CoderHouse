@@ -1,4 +1,26 @@
-ul li::marker {
-  color: transparent;
-  font-size: 1.5em;
+ul.navbar {
+  list-style: none;
+  display: flex;
+}
+
+ul.navbar li {
+  margin-right: 15px;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 25px;
+  box-shadow: 1px 5px 15px black;
+  box-sizing: border-box;
+}
+
+img.App-logo {
+  max-width: 100px;
+}
+
+h1 {float: left;
+  display: flex;
+  color: darkturquoise;
 }
