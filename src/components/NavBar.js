@@ -11,7 +11,7 @@ function NavBar(){
             <li><button>Home</button></li>
             <li><button>Productos</button></li>
             <li><button>Nosotros</button></li>
-            <li><button>Contacto</button></li>
+            <li><button>Contactos</button></li>
         </ul>
     </div>
     </header>
