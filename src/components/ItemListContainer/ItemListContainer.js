@@ -1,7 +1,7 @@
 import React,{ useState, useEffect } from 'react';
 import Card from '../Card/Card';
 
-const ListProducts = () => {
+const ItemListContainer = () => {
 
     const [showCard, setShowCard] = useState(true);
 
@@ -22,4 +22,4 @@ const ListProducts = () => {
         </div>
     )
 }
-export default ListProducts;
+export default ItemListContainer;

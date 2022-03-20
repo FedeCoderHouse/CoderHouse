@@ -1,4 +1,5 @@
 import Button from '@mui/material/Button';
+import CartWidget from '../CartWidget/CartWidget';
 
 function NavBar(){
     return (
@@ -14,6 +15,7 @@ function NavBar(){
             <li><Button variant="outlined">Contacto</Button></li>
         </ul>
     </div>
+    <CartWidget/>
     </header>
     );
 }
