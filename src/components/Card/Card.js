@@ -1,4 +1,7 @@
 import React,{ useState, useEffect } from 'react';
+import AddIcon from '@mui/icons-material/Add';
+import ItemCount from '../ItemCount/ItemCount';
+import Button from '@mui/material/Button';
 
 import './Card.css';
 
@@ -39,9 +42,12 @@ export default function Card( data ) {
             <h2>{title}</h2>
             <p>Precio: ${precio}</p>
             <p>Talle: {talle}</p>
-            <button onClick={removeStock}>Quitar item</button>
-            <p>Stock: {count}</p>
-            <button onClick={addStock}>Agregar item</button>
+            <div>
+                <button className='alineados tamanio-boton' onClick={removeStock}>-</button>
+                <p className='alineados tamanio-boton'>{count}</p>
+                <button className='tamanio-boton' onClick={addStock}>+</button>
+                <Button size="small" variant="outlined">Agregar al carrito</Button>
+            </div>
         </div>
     )
 }
