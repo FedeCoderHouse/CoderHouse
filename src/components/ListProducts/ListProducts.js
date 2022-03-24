@@ -40,7 +40,9 @@ const ListProducts = ({children}) => {
 
     const getProducts = () => {
         return new Promise((resolve, reject) => {
-            return resolve(mockProductos)
+            setTimeout(() => {
+                return resolve(mockProductos)
+        }, 2000);
         })
     } 
 
