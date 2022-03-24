@@ -1,26 +1,24 @@
-ul.navbar {
-  list-style: none;
-  display: flex;
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100&family=Montserrat:wght@100;300;500&display=swap');
+p,a,h1,h2,h3,h4,span {
+  font-family: 'Montserrat', sans-serif;
 }
-
-ul.navbar li {
-  margin-right: 15px;
-}
-
-header {
+header.main-header {
   width: 100%;
   display: flex;
-  justify-content: space-between;
   padding: 10px 25px;
-  box-shadow: 1px 5px 15px black;
+  box-shadow: 1px 5px 15px #81818129;
+  justify-content: space-between;
+  align-items: center;
   box-sizing: border-box;
+  background: black;
 }
 
-img.App-logo {
-  max-width: 100px;
+.container-general {
+  width: 1200px;
+  margin-top: 100px;
 }
-
-h1 {float: left;
-  display: flex;
-  color: darkturquoise;
+.container-cards {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
 }

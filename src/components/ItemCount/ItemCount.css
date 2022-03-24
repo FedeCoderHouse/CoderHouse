@@ -1,0 +1,9 @@
+.alineados {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.tamanio-boton {
+    width: 35px;
+    height: 35px;
+}

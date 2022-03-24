@@ -1,3 +1,12 @@
+.card-item {
+    float: left;
+    width: calc(33.333% - 20px);
+    margin-top: 20px;
+    margin-left: 20px;
+    box-shadow: 1px 1px 5px #0000002b;
+    text-align: center;
+    overflow: hidden;
+  }
 .card-med{
     display: inline-block;
     margin: 20px;
@@ -7,11 +16,8 @@
     width: 162px;
 }
 
-.alineados {
-    display: inline-block;
-    margin-right: 20px;
-}
 
-.tamanio-boton {
-    padding: 10px;
+
+.card-item img {
+    max-width: 100%;
 }

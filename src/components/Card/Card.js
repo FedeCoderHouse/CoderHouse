@@ -1,52 +1,50 @@
-import React,{ useState, useEffect } from 'react';
-import AddIcon from '@mui/icons-material/Add';
-import ItemCount from '../ItemCount/ItemCount';
+import React,{ useState, useEffect } from 'react'
+import './Card.css'
+import ItemCount from '../ItemCount/ItemCount'
 import Button from '@mui/material/Button';
+import { brown } from '@mui/material/colors';
 
-import './Card.css';
+export default function Card({ data }) {
+    const { title, price, stock, image, initial } = data
+    const [ count, setCount ] = useState(1)
+    const [ countTest, setCountTest ] = useState(1)
+    //const [ ]
 
-export default function Card( data ) {
-    const {precio, talle, title} = data;
-    const [count, setCount] = useState(1);
+    // useEffect( () => {
+    //     console.log("SOLO MONTAJE")
+    // },[] )
 
-    //console.log("Fecha actual: ", new Date().toLocaleString())
-    //console.log("estado Contador: ", count);
+    // useEffect( () => {
+    //     console.log("Siempre que entre en fase ACTUALIZACION")
+    // })
 
-    useEffect( () => {
-        console.log("Siempre que entre en fase de ACTUALIZACIÓN")
-    })
-    useEffect( () => {
-        console.log("Solo MONTAJE")
-    }, [])
-    useEffect( () => {
-        console.log("Solo cuando cambie el COUNT")
-    }, [count])
-    useEffect( () => {
-        return () => {
-            console.log("Fase de DESMONTAJE")
-            //window.addEventListener("scroll")
-        }
-    })
+    // useEffect( () => {
+    //     console.log("SOLO CUANDO CAMBIE COUNT")
+    // },[count] )
+
+    // useEffect( () => {
+    //     return () => {
+    //         console.log("FASE DE DESMONTAJE")
+    //     }
+    // })
 
     const addStock = () => {
-        setCount(count +1)
+        setCount(count + 1)
     }
-
     const removeStock = () => {
-        setCount(count -1)
+        setCountTest(countTest - 1)
     }
-
-
     return(
-        <div className="card-med">
-            <h2>{title}</h2>
-            <p>Precio: ${precio}</p>
-            <p>Talle: {talle}</p>
-            <div>
-                <button className='alineados tamanio-boton' onClick={removeStock}>-</button>
-                <p className='alineados tamanio-boton'>{count}</p>
-                <button className='tamanio-boton' onClick={addStock}>+</button>
-                <Button size="small" variant="outlined">Agregar al carrito</Button>
+        <div className="card-item">
+            <img src={`./${image}`} alt={image} />
+            
+            <div className='container-card-data'>
+                <h2>{title}</h2>
+                <p>Precio : $ {price}</p>
+                <div display="inline-block">
+                    <ItemCount stock={ stock } initial={ initial }/>
+                </div>
+                <Button sx={{ color: brown[500] }}>Comprar</Button>
             </div>
         </div>
     )
