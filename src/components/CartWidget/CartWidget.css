@@ -1,3 +1,14 @@
 .carrito {
-    font-size: large;
+    cursor: pointer;
+    color: white;
+}
+.carrito:hover {
+    color: #795548;
+    transition: 0.25s;
+}
+.carrito-contenedor {
+    width: 100%;
+    text-align: end;
+    margin-right: 100px;
+    margin-top: 15px;
 }
