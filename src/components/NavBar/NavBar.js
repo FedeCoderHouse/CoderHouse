@@ -32,15 +32,16 @@ function NavBar(props) {
             
             <ul>
                     <li>
-                        <Button className="custom-btn" variant="outlined">
-                            <Link to={'/sillas'}>Sillas</Link>
-                        </Button>     
-                    </li>
-                    <li>
                         <Button sx={{ color: brown[500] }} className="custom-btn" variant="outlined">
                             <Link to={'/sillones'}>Sillones</Link>
                         </Button>     
                     </li>
+                    <li>
+                        <Button className="custom-btn" variant="outlined">
+                            <Link to={'/sillas'}>Sillas</Link>
+                        </Button>     
+                    </li>
+                    
                 {pages.map((page) => {
                     return(
                         <li>

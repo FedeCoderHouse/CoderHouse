@@ -31,11 +31,14 @@ const DetailPage = () => {
                 <p className='info__text'>$ {product.price}</p>
                 <p className='info__subtitle'>COLOR</p>
                 <ul className='info__color'style={{display: 'flex'}}>
-                    <li style={{background: '#000000', width: '20px', height: '20px', marginRight: '20px'}}></li>
-                    <li style={{background:'#9b1414', width: '20px', height: '20px'}}></li>
+                    {product.colors?.map( (color) => {
+                        return(
+                            <li style={{background: `${color.hex}`, width: '20px', height: '20px', marginRight: '20px'}}></li>
+                        )
+                    })}                    
                 </ul>
                 <p className='info__subtitle'>DETALLE</p>
-                <p className='info__text detail__text'>Silla de madera para living y cocina</p>
+                <p className='info__text detail__text'>{product.descripcion}</p>
                 <Button className='detail__btn-buy'>COMPRAR</Button>
             </div>
             </div>

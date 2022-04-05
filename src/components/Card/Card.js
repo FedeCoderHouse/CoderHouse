@@ -6,7 +6,7 @@ import { brown } from '@mui/material/colors';
 import { Link } from 'react-router-dom'
 
 export default function Card({ data }) {
-    const { title, price, stock, image, initial, id } = data
+    const { title, price, stock, image, initial, id, colors, descripcion } = data
 
     // useEffect( () => {
     //     console.log("SOLO MONTAJE")

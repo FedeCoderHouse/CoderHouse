@@ -1,18 +1,38 @@
 const mockProductos = [{
-    title : 'Silla Uno',
+    title : 'Sillón Uno',
     id: 1,
     price: 1500,
     image: 'Silla1.jpg',
     stock: 3,
-    initial: 1
+    category: 'sillones',
+        colors: [
+            {
+                hex: '#000000'
+            },
+            {
+                hex: '#9b1414'
+            }
+        ],
+    initial: 1,
+    descripcion: 'Silla uno de madera para living y cocina'
 },
 {
-    title : 'Silla Dos',
+    title : 'Sillón Dos',
     id: 2,
     price: 3500,
     image: 'Silla2.jpg',
+    category: 'sillones',
+        colors: [
+            {
+                hex: '#000000'
+            },
+            {
+                hex: '#9b1414'
+            }
+        ],
     stock: 6,
-    initial: 2  
+    initial: 1,
+    descripcion: 'Silla dos de madera para living y cocina' 
 },
 {
     title : 'Silla Tres',
@@ -20,7 +40,17 @@ const mockProductos = [{
     price: 1200,
     image: 'Silla3.jpeg',
     stock: 6,
-    initial: 4  
+    category: 'sillas',
+        colors: [
+            {
+                hex: '#000000'
+            },
+            {
+                hex: '#9b1414'
+            }
+        ],
+    initial: 1,
+    descripcion: 'Silla tres de madera para living y cocina'
 },
 {
     title : 'Silla Cuatro',
@@ -28,7 +58,17 @@ const mockProductos = [{
     price: 1200,
     image: 'Silla4.jpg',
     stock: 6,
-    initial: 1  
+    category: 'sillas',
+        colors: [
+            {
+                hex: '#000000'
+            },
+            {
+                hex: '#9b1414'
+            }
+        ],
+    initial: 1,
+    descripcion: 'Silla cuatro de madera para living y cocina'
 }
 ]
 

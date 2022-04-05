@@ -9,6 +9,7 @@ import NotFoundPage from './pages/NotFound'
 import DetailPage from './pages/Detail';
 
 function App() {
+
   return (
     //JSX
     
@@ -23,6 +24,7 @@ function App() {
         <Route path="*" element={<NotFoundPage />}/>
       </Routes>
     </BrowserRouter>
+
     </div>
   );
 }
