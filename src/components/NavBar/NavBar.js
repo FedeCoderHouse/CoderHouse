@@ -28,8 +28,11 @@ function NavBar(props) {
         //JSX
         <header>
             <div className='navbar' sx={{ bgcolor: brown[300] }}>
-            <ChairTwoToneIcon fontSize="large" className="zoom" sx={{ color: brown[500], marginLeft: 5 }}/>
-            
+            <button className="boton-logo">
+                <Link to={'/'}>
+                    <ChairTwoToneIcon fontSize="large" className="zoom" sx={{ color: brown[500]}}></ChairTwoToneIcon>
+                </Link>
+            </button>
             <ul>
                     <li>
                         <Button sx={{ color: brown[500] }} className="custom-btn" variant="outlined">

@@ -1,12 +1,13 @@
 import './App.css';
-import ResponsiveAppBar from './components/ResponsiveAppBar/ResponsiveAppBar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 //pages
 import HomePage from './pages/Home'
-
+import ContactPage from './pages/Contact'
+import Nosotros from './pages/Nosotros'
 import NotFoundPage from './pages/NotFound'
-import DetailPage from './pages/Detail';
+//import DetailPage from './pages/Detail';
+import ItemDetail from './components/ItemDetail/ItemDetail'
 
 function App() {
 
@@ -20,7 +21,10 @@ function App() {
 
         <Route path="/" element={<HomePage />}/>
         <Route path="/:category/" element={<HomePage />}/>
-        <Route path="/:category/:id" element={<DetailPage />}/>
+        <Route path="/contacto" element={<ContactPage />}/>
+        <Route path="/productos" element={<HomePage />}/>
+        <Route path="/nosotros" element={<Nosotros />}/>
+        <Route path="/:category/:id" element={<ItemDetail />}/>
         <Route path="*" element={<NotFoundPage />}/>
       </Routes>
     </BrowserRouter>

@@ -17,7 +17,7 @@ const ListProducts = ({children}) => {
     useEffect( () => {
         setProducts([])
         getProducts().then( (productos) => {
-            filterProductByCategory(productos, category)
+            category ? filterProductByCategory(productos, category) : setProducts(productos)
         })
     }, [category])
 
