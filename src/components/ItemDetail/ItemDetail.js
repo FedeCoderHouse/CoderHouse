@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import mockProductos from '../../Utils/productsMock';
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = () => {
     const { id, category } = useParams()
@@ -39,6 +40,7 @@ const ItemDetail = () => {
                 </ul>
                 <p className='info__subtitle'>DETALLE</p>
                 <p className='info__text detail__text'>{product.descripcion}</p>
+                <ItemCount></ItemCount>
                 <Button className='detail__btn-buy'>COMPRAR</Button>
             </div>
             </div>

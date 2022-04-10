@@ -8,6 +8,7 @@ import Nosotros from './pages/Nosotros'
 import NotFoundPage from './pages/NotFound'
 //import DetailPage from './pages/Detail';
 import ItemDetail from './components/ItemDetail/ItemDetail'
+import { CartProvider } from './context/CartContext';
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
     //JSX
     
     <div className="App">
-    <BrowserRouter>
+    {/* <BrowserRouter>
       <NavBar />
       <Routes>
 
@@ -27,7 +28,25 @@ function App() {
         <Route path="/:category/:id" element={<ItemDetail />}/>
         <Route path="*" element={<NotFoundPage />}/>
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
+    
+
+    <CartProvider>
+
+          <BrowserRouter>
+            <NavBar />
+            <Routes>
+            <Route path="/" element={<HomePage />}/>
+            <Route path="/:category/" element={<HomePage />}/>
+            <Route path="/contacto" element={<ContactPage />}/>
+            <Route path="/productos" element={<HomePage />}/>
+            <Route path="/nosotros" element={<Nosotros />}/>
+            <Route path="/:category/:id" element={<ItemDetail />}/>
+            <Route path="*" element={<NotFoundPage />}/>
+            </Routes>
+          </BrowserRouter>
+
+      </CartProvider>
 
     </div>
   );
