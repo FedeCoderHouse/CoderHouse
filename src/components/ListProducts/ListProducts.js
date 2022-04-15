@@ -3,15 +3,29 @@ import Card from '../Card/Card'
 import mockProductos from '../../Utils/productsMock'
 import { useParams } from 'react-router-dom'
 
+import CircularProgress from '@mui/material/CircularProgress';
+import db from '../../firebase'
+import { collection, getDocs, query, where } from 'firebase/firestore'
+
 const ListProducts = ({children}) => {
     const { category } = useParams()
 
     const [products, setProducts] = useState([])
 
-    const getProducts = () => {
-        return new Promise((resolve, reject) => {
-            return resolve(mockProductos)
-        })
+    const [loading , setLoading] = useState(true)
+
+    const getProducts = async () => {
+        const itemsCollection = collection(db, 'productos')
+        const productosSnapshot = await getDocs(itemsCollection)
+        const productList = productosSnapshot.docs.map((doc) => {
+                let product = doc.data()
+                product.id = doc.id
+                console.log("product:", product)
+                return product
+            }
+        )
+        return productList
+
     } 
 
     useEffect( () => {
@@ -32,10 +46,8 @@ const ListProducts = ({children}) => {
 
     return(
         <div className="container-cards">
-            <h2> Productos en Oferta</h2>
-            
-            {console.log("products: ", products)}
-            {products.map( ( product ) =>  <Card data={product} key={product.id}/>)}
+            <h2> Productos en Oferta </h2>
+            <> {products.map( ( product ) =>  <Card data={product} key={product.id} />)} </>
         </div>
     ) 
 }

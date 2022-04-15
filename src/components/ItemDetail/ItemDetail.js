@@ -5,21 +5,39 @@ import { useEffect, useState } from 'react';
 import mockProductos from '../../Utils/productsMock';
 import ItemCount from '../ItemCount/ItemCount';
 
+import { useNavigate } from 'react-router-dom';
+import { doc, getDoc } from "firebase/firestore";
+import db from '../../firebase';
+
 const ItemDetail = () => {
-    const { id, category } = useParams()
+ 
     const [product, setProduct] = useState({})
+    const { id } = useParams()
+    const navigate = useNavigate()
+
+
+    const getProduct = async() => {
+        const docRef = doc(db, "productos", id);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+            console.log("Document data:", docSnap.data());
+            let product = docSnap.data()
+            product.id = docSnap.id
+            setProduct(product)
+          } else {
+            console.log("No such document!");
+            navigate('/error')
+          }
+    }
+
 
     useEffect( () => {
-        filterProductById(mockProductos, id)
+
+        getProduct()
     }, [id])
 
-    const filterProductById = (array , id) => {
-        return array.map( (product) => {
-            if(product.id == id) {
-                return setProduct(product)
-            }
-        })
-    }
+
     
     return(
         <Container className='container-general'> 
