@@ -79,9 +79,9 @@ const CartWidget = () => {
                                 <p>{cartProduct.title}</p>
                                 <span>$ {cartProduct.price}</span>
                             </div>
-                            <div className='item-cart-modal__action'>
+                            {/* <div className='item-cart-modal__action'>
                                 <DeleteIcon />
-                            </div>
+                            </div> */}
                         </MenuItem>
                     )
                 })}

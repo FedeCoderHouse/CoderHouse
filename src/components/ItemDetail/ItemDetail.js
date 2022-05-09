@@ -1,9 +1,11 @@
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import mockProductos from '../../Utils/productsMock';
 import ItemCount from '../ItemCount/ItemCount';
+
+import CartContext from '../../context/CartContext'
 
 import { useNavigate } from 'react-router-dom';
 import { doc, getDoc } from "firebase/firestore";
@@ -39,6 +41,9 @@ const ItemDetail = () => {
 
 
     
+
+
+    
     return(
         <Container className='container-general'> 
             <div className='container-detail'>
@@ -58,8 +63,11 @@ const ItemDetail = () => {
                 </ul>
                 <p className='info__subtitle'>DETALLE</p>
                 <p className='info__text detail__text'>{product.descripcion}</p>
-                <ItemCount></ItemCount>
-                <Button className='detail__btn-buy'>COMPRAR</Button>
+                <div style={{marginLeft: '28%'}}>
+                <ItemCount stock={product.stock} initial={product.initial} product={product}></ItemCount>
+                </div>
+                
+                
             </div>
             </div>
         </Container>

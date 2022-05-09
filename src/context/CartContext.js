@@ -1,4 +1,3 @@
-
 import { createContext, useState } from "react";
 
 const CartContext = createContext();
@@ -6,16 +5,31 @@ const CartContext = createContext();
 
 const CartProvider = ({children}) => {
     const [cartProducts, setCartProducts] = useState([])
+    const [totalPrice, setTotalPrice] = useState(0)
+    const [cantidad, setCantidad] = useState(0)
 
-    const addProductToCart = (product) => {
-        console.log("Producto a agregar: ", product)
-        //setCartProducts([product])
-        setCartProducts(cartProducts => [...cartProducts, product])
+    const addProductToCart = (product, count) => {
+        let exist = cartProducts.find(cartProduct => cartProduct.id === product.id)
+        if(!exist) { 
+             
+             setCantidad(count)
+             setTotalPrice(totalPrice + product.price * count) 
+            //setTotalPrice(totalPrice + product.price)
+            setCartProducts(cartProducts => [...cartProducts, product])
+        }
+    }
+
+    const deleteProduct = (product, count) => {
+        setCartProducts(cartProducts.filter( cartProduct => cartProduct.id !== product.id))
+        setTotalPrice(totalPrice - product.price * count)
     }
 
     const data = {
         cartProducts,
-        addProductToCart
+        addProductToCart,
+        totalPrice,
+        deleteProduct,
+        cantidad
     }
 
     return(

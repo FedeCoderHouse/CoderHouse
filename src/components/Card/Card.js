@@ -41,11 +41,11 @@ export default function Card({ data, action }) {
     const changePage = () => {
         navigate(`/productos/${id}`)
     }
-    const addToCart = (e) => {
-        e.stopPropagation()  
-        console.log("Productos agregados:", cartProducts) 
-        addProductToCart(data)
-    }
+    // const addToCart = (e) => {
+    //     e.stopPropagation()  
+    //     console.log("Productos agregados:", cartProducts) 
+    //     addProductToCart(data)
+    // }
 
 
     return(
@@ -56,7 +56,7 @@ export default function Card({ data, action }) {
                 <div className='container-card-data'>
                     <h2>{title}</h2>
                     <p>Precio : $ {price}</p>
-                    <Button onClick={addToCart} className="btn-custom">Comprar</Button>
+                    {/* <Button onClick={addToCart} className="btn-custom">Comprar</Button> */}
                 </div>
         </div>
 

@@ -6,6 +6,7 @@
     box-shadow: 1px 1px 5px #0000002b;
     text-align: center;
     overflow: hidden;
+    cursor: pointer;
   }
 .card-med{
     display: inline-block;

@@ -8,3 +8,7 @@
     height: 35px;
     float: left;
 }
+p {
+    margin-top: 10px;
+    margin-left: 20px;
+}
